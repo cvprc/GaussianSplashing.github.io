@@ -1,4 +1,3 @@
-// Written by Jonas Kulhanek 2024, based on Dor Verbin, October 2021
 function playMergeVid(vid, videoMerge) {
     const leftcaption = [...videoMerge.parentElement.querySelectorAll('.video-label > :first-child')];
     const rightcaption = [...videoMerge.parentElement.querySelectorAll('.video-label > :last-child')];
