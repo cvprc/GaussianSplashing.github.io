@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaussian Splashing</title>
+    <meta name="description" content="Description of the paper and key contributions.">
+    <meta name="keywords" content="relevant, keywords, here" />
+    <meta name="author" content="Your Name" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span class="title-main"><span>Gaussian Splashing: Direct Volumetric Rendering Underwater</span></span>
+        <span class="title-small">A fast underwater 3D reconstruction method, that accounts for light attenuation and backscattering.</span>
+      </h1>
+    </header>
+    <div class="authors">
+      <div class="author">
+        <span class="author">Anonymous</span>
+        <!-- <span class="author-affiliation">Anonymous-affiliation</span> -->
+      </div>
+      <!-- <div class="author">
+        <span class="author-name">Author 2</span>
+        <span class="author-affiliation">University/Institute</span>
+      </div> -->
+      <!-- Add more authors as needed -->
+    </div>
+    <div class="links">
+      <a class="button" href="/paper.pdf"><i class="ti ti-file-type-pdf"></i> Paper</a>
+      <!-- <a class="button" href="https://arxiv.org"><img style="height:80%;margin-right:0.2em;filter: brightness(0) saturate(100%) invert(100%)" src="/assets/arxiv.svg"> arXiv</a> -->
+      <a class="button" href="https://github.com/your-repo"><i class="ti ti-brand-github-filled"></i> Code (coming soon)</a>
+      <a class="button" href="/paper.pdf"><i class="ti ti-file-type-pdf"></i> TableDB dataset (coming soon)</a>
+    </div>
+    <style>
+      .video.teaser-video::before {
+        padding-bottom: 50%;
+      }
+    </style>
+    <video class="video" style="aspect-ratio: 1920/1080" loop muted autoplay>
+      <source src="assets/output_video.webm" type="video/webm">
+      <source src="assets/output_video.mp4" type="video/mp4">
+    </video>
+    <p class="justify" style="font-size: 1rem;margin: 0 0 0.4rem 0; text-align-last: center">
+    <strong>Your Method Name</strong> brief description or tagline.
+    </p>
+
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Most useful features in underwater images are occluded by water. Consequently, underwater scenes present additional difficulties beyond the usual challenges of 3D reconstruction and rendering for in-air scenes.
+        Naive applications of Neural Radiance Field methods (NeRFs) or Gaussian Splatting, while highly robust for in-air scenes, fail to perform underwater. Here we introduce Gaussian Splashing, a new method based on 3D Gaussian Splatting (3DGS), into which we incorporate an image formation model for scattering.
+        Concretely, we introduce three additional learnable parameters to the rendering procedure, modify the depth estimation step for underwater conditions, alter the original loss term used in 3DGS, and introduce an additional loss term for backscatter.
+        Our approach achieves state-of-the-art performance for underwater scenes and is highly efficient, with 3D reconstruction taking only a few minutes and rendering at 140 FPS, despite the complexities of underwater adaptation.
+      </p>
+
+<figure style="margin: 0">
+    <picture>
+      <source srcset="assets/MethodOverview.webp, assets/MethodOverview@2x.webp 2x" type="image/webp" />
+      <source srcset="assets/MethodOverview.png, assets/MethodOverview@2x.png 2x" type="image/png" />
+      <img src="assets/overview.png" alt="WaterSplatting overview" style="width: 100%; margin: 1em auto 0.3em auto; display: block;" />
+    </picture>
+      <figcaption style="text-align: justify">
+        Method overview: Initially, we utilize Structure from Motion (SfM) to acquire an initial point cloud and camera poses. 
+        Subsequently, we commence the optimization process to refine the model based on our underwater rendering equation and modified tile rasterization, taking those distortions into account. 
+        We evaluate backscatter every 500 steps to ensure convergence towards the accurate medium coefficients using our approach.
+      </figcaption>
+    </figure>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <figure>
+        <div class="video-wrapper">
+          <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
+            <source src="assets/output_video.webm" type="video/webm">
+            <source src="assets/output_video.mp4" type="video/mp4">
+          </video>
+          <span class="video-label">
+            <span>Comparison Label 1</span>
+            <span>Comparison Label 2</span>
+          </span>
+        </div>
+        <figcaption>
+          <strong>Description of Comparison</strong> Brief details of what is being compared.
+        </figcaption>
+      </figure>
+      <!-- Repeat figure blocks as needed -->
+    </section>
+
+    <!-- <section>
+      <h2>Acknowledgements</h2>
+      <p class="justify">
+        Acknowledge contributors, funding sources, and other assistance here.
+      </p>
+    </section> -->
+
+    <!-- <section class="citation">
+      <h2>Citation</h2>
+      <span>Please use the following citation:</span>
+      <pre><code>@article{your_citation_label,
+  title={Your Paper Title},
+  author={Author Names},
+  journal={arXiv},
+  year={2024}
+}</code></pre>
+    </section> -->
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
