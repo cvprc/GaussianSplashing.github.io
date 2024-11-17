@@ -46,11 +46,19 @@
       }
     </style>
     <video class="video" style="aspect-ratio: 1920/1080" loop muted autoplay>
-      <source src="static/assets/output_video.webm" type="video/webm">
-      <source src="static/assets/output_video.mp4" type="video/mp4">
+      <source src="static/assets/JP_bs_medium.webm" type="video/webm">
+      <source src="static/assets/JP_bs_medium.mp4" type="video/mp4">
     </video>
     <p class="justify" style="font-size: 1rem;margin: 0 0 0.4rem 0; text-align-last: center">
-    <strong>Your Method Name</strong> brief description or tagline.
+    <strong>GaussianSplashing</strong> Rendered images of the Red Sea scene, accompanied by normalized backscattering images and images without the medium.
+    </p>
+
+    <video class="video" style="aspect-ratio: 1920/1080" loop muted autoplay>
+      <source src="static/assets/TableDBGTFrames.webm" type="video/webm">
+      <source src="static/assets/TableDBGTFrames.mp4" type="video/mp4">
+    </video>
+    <p class="justify" style="font-size: 1rem;margin: 0 0 0.4rem 0; text-align-last: center">
+    <strong>TableDB dataset:</strong> A newly added underwater dataset includes scene captures from different distances and viewpoints.
     </p>
 
     <section class="abstract">
@@ -64,12 +72,12 @@
 
 <figure style="margin: 0">
     <picture>
-      <source srcset="static/assets/MethodOverview.webp" type="image/webp" />
-      <source srcset="static/assets/MethodOverview.png" type="image/png" />
+      <source srcset="static/assets/methodOverview.webp" type="image/webp" />
+      <source srcset="static/assets/methodOverview.png" type="image/png" />
       <img src="static/assets/overview.png" alt="WaterSplatting overview" style="width: 100%; margin: 1em auto 0.3em auto; display: block;" />
     </picture>
       <figcaption style="text-align: justify">
-        Method overview: Initially, we utilize Structure from Motion (SfM) to acquire an initial point cloud and camera poses. 
+        <strong>Method overview: </strong>Initially, we utilize Structure from Motion (SfM) to acquire an initial point cloud and camera poses. 
         Subsequently, we commence the optimization process to refine the model based on our underwater rendering equation and modified tile rasterization, taking those distortions into account. 
         We evaluate backscatter every 500 steps to ensure convergence towards the accurate medium coefficients using our approach.
       </figcaption>
@@ -79,20 +87,69 @@
     <section>
       <h2>Results</h2>
       <figure>
-        <div class="video-wrapper">
-          <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-            <source src="static/assets/output_video.webm" type="video/webm">
-            <source src="static/assets/output_video.mp4" type="video/mp4">
-          </video>
-          <span class="video-label">
-            <span>Comparison Label 1</span>
-            <span>Comparison Label 2</span>
-          </span>
-        </div>
-        <figcaption>
-          <strong>Description of Comparison</strong> Brief details of what is being compared.
-        </figcaption>
-      </figure>
+  <div class="video-wrapper">
+    <video id="videoCompare" class="video-compare" style="aspect-ratio: 1280/720" loop muted>
+      <source src="static/assets/Curasao_depth.webm" type="video/webm">
+      <source  src="static/assets/Curasao_depth.mp4" type="video/mp4">
+    </video>
+    <span class="video-label">
+      <span>Rendered (154 FPS)</span>
+      <span>Depth</span>
+    </span>
+  </div>
+  <figcaption>
+    <strong>Curacao Scene</strong> The Rendered view shows the scene’s colors and textures, while the Depth view represents object distances. 
+
+</figure>
+
+<figure>
+  <div class="video-wrapper">
+    <video id="videoCompare" class="video-compare" style="aspect-ratio: 1280/720" loop muted>
+      <source src="static/assets/Panama_depth.webm" type="video/webm">
+      <source  src="static/assets/Panama_depth.mp4" type="video/mp4">
+    </video>
+    <span class="video-label">
+      <span>Rendered (163 FPS)</span>
+      <span>Depth</span>
+    </span>
+  </div>
+  <figcaption>
+    <strong>Panama Scene</strong> rendered and depth. 
+
+</figure>
+
+<figure>
+  <div class="video-wrapper">
+    <video id="videoCompare" class="video-compare" style="aspect-ratio: 1280/720" loop muted>
+      <source src="static/assets/JP_comp.webm" type="video/webm">
+      <source  src="static/assets/JP_comp.mp4" type="video/mp4">
+    </video>
+    <span class="video-label">
+      <span>Gaussian Splashing</span>
+      <span>3DGS</span>
+    </span>
+  </div>
+  <figcaption>
+    <strong>Red Sea Scene</strong> A comparison of our method against 3DGS highlights the differences, showcasing the improvements in underwater scene reconstruction.
+
+</figure>
+
+<figure>
+  <div class="video-wrapper">
+    <video id="videoCompare" class="video-compare" style="aspect-ratio: 1280/720" loop muted>
+      <source src="static/assets/TableDB_comp.webm" type="video/webm">
+      <source  src="static/assets/TableDB_comp.mp4" type="video/mp4">
+    </video>
+    <span class="video-label">
+      <span>Gaussian Splashing</span>
+      <span>3DGS</span>
+    </span>
+  </div>
+  <figcaption>
+    <strong>Red Sea Scene</strong> The improvement becomes significantly more pronounced as the view zooms out and the distance to the object increases.
+
+</figure>
+
       <!-- Repeat figure blocks as needed -->
     </section>
 
